@@ -1,0 +1,24 @@
+{{define "base"}}
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Choose Your own adveture</title>
+    </head>
+    <body>
+        <div>
+            <h1>{{.Title}}</h1>
+            {{range .Story}}
+            <p>{{.}}</p>
+            {{end}}
+            <li>
+            {{range .Options}}
+            <ul><a href='/{{.Arc}}'> {{.Text}}</a></ul>
+            {{else}}
+            <b>THE END</b>
+            {{end}}
+            </li>
+        </div>
+    </body>
+</html>
+{{end}}
